@@ -3,7 +3,7 @@ from db import db
 from models import usuarios
 
 app = Flask (__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///dados.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://neondb_owner:npg_lJzKsg42jLDy@ep-sparkling-cloud-acj5l08e-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 db.init_app(app)
 
 @app.route("/")
