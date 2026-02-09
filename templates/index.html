@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista dos Usuários<h1>
+        <ul>
+            {% for user in users %}
+                <li>{{user.id}}.   {{user.name}} -   {{user.email}} -   {{user.telefone}} <a href="/delete/{{user.id}}"><button>Delete</button></a> : <a href="/edit/{{user.id}}"><button>Edit</button></a></li>
+            {% endfor %}
+        </ul>
+    <a href="register"><button>Register</button></a>
+</body>
+</html>
