@@ -1,9 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for
 from db import db
 from models import usuarios
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DB_URL = os.getenv("DATABASE_URL")
 
 app = Flask (__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://neondb_owner:npg_lJzKsg42jLDy@ep-sparkling-cloud-acj5l08e-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///dados.db"
 db.init_app(app)
 
 @app.route("/")
